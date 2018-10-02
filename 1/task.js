@@ -12,13 +12,11 @@ export const append = (list, tag) => consList(tag, list);
 export const toString = (numbers) => {
   let acc = '';
   const iter = (numbers) => {
-      if (isEmpty(numbers) === false) {
-        acc = '<' + name(head(numbers)) + '>' + value(head(numbers)) + '</' + name(head(numbers)) + '>' + acc;
-        return iter(tail(numbers));  
-      }
-      return acc;
-  }
+    if (isEmpty(numbers) === false) {
+      acc = `<${name(head(numbers))}>${value(head(numbers))}</${name(head(numbers))}>${acc}`;
+      return iter(tail(numbers));
+    }
+    return acc;
+  };
   return listToString(iter(numbers));
-}
-
-
+};
